@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.CalmNguyen/ttsforfree",
+  "description": "Generate AI voices, text-to-speech, subtitles, transcription, and video localization.",
+  "title": "TTSForFree",
+  "repository": {
+    "url": "https://github.com/CalmNguyen/ttsforfree-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "websiteUrl": "https://ttsforfree.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.ttsforfree.com/mcp"
+    }
+  ]
+}
