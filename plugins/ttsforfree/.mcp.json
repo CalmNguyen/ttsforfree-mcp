@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ttsforfree": {
+      "type": "http",
+      "url": "https://api.ttsforfree.com/mcp"
+    }
+  }
+}

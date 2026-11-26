@@ -1,0 +1,202 @@
+{
+  "id": "one-percent",
+  "lang": "en",
+  "title": "Get 1% better every day",
+  "useCase": "motivation",
+  "voiceTier": "hybrid",
+  "scenes": [
+    {
+      "text": "Get one percent better every day. Just one percent.",
+      "narration": {
+        "voice": "Concierge 10 Gemini (East Coast)"
+      },
+      "background": "classroom",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "point",
+          "x": 0.25,
+          "hat": "headband",
+          "color": "#e8715a",
+          "speaking": true,
+          "expression": "determined"
+        }
+      ],
+      "boardText": "1% / DAY",
+      "highlight": [
+        "one",
+        "percent"
+      ],
+      "camera": "punchIn"
+    },
+    {
+      "text": "Day one, you can barely do a single push-up.",
+      "narration": {
+        "voice": "Guy (Natural)  (United States)"
+      },
+      "background": "gym",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "pushup",
+          "x": 0.5,
+          "hat": "headband",
+          "color": "#e8715a",
+          "expression": "sad"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "sweat",
+          "x": 0.4,
+          "y": 0.62
+        }
+      ],
+      "highlight": [
+        "one"
+      ]
+    },
+    {
+      "text": "Nobody notices. Not even you.",
+      "narration": {
+        "voice": "Guy (Natural)  (United States)"
+      },
+      "background": "room",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "sad",
+          "x": 0.5,
+          "hat": "headband",
+          "color": "#e8715a",
+          "expression": "sad"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "rain",
+          "x": 0.5
+        }
+      ],
+      "highlight": [
+        "nobody"
+      ]
+    },
+    {
+      "text": "Day one hundred. It still feels slow.",
+      "narration": {
+        "voice": "Guy (Natural)  (United States)"
+      },
+      "background": "gym",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "lift",
+          "x": 0.5,
+          "hat": "headband",
+          "color": "#e8715a",
+          "expression": "determined"
+        }
+      ],
+      "props": [
+        {
+          "kind": "calendar",
+          "x": 0.8,
+          "label": "100",
+          "scale": 0.8
+        }
+      ],
+      "highlight": [
+        "hundred"
+      ]
+    },
+    {
+      "text": "But one percent a day compounds.",
+      "narration": {
+        "voice": "Guy (Natural)  (United States)"
+      },
+      "background": "classroom",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "point",
+          "x": 0.22,
+          "hat": "headband",
+          "color": "#e8715a",
+          "speaking": true
+        }
+      ],
+      "boardText": "1.01 ^ 365",
+      "props": [
+        {
+          "kind": "chart",
+          "x": 0.72,
+          "scale": 0.8,
+          "label": "you"
+        }
+      ],
+      "highlight": [
+        "compounds"
+      ]
+    },
+    {
+      "text": "After one year, you're not three hundred percent better. You're thirty seven times better.",
+      "narration": {
+        "voice": "Concierge 10 Gemini (East Coast)"
+      },
+      "background": "gym",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "cheer",
+          "x": 0.5,
+          "hat": "headband",
+          "color": "#e8715a",
+          "expression": "happy",
+          "prop": "trophy"
+        }
+      ],
+      "bigText": "37×",
+      "effects": [
+        {
+          "kind": "sparkle",
+          "x": 0.5,
+          "y": 0.35
+        }
+      ],
+      "highlight": [
+        "thirty",
+        "seven"
+      ],
+      "camera": "flash"
+    },
+    {
+      "text": "Start today. One percent.",
+      "narration": {
+        "voice": "Guy (Natural)  (United States)"
+      },
+      "background": "void",
+      "actors": [
+        {
+          "id": "hero",
+          "pose": "point",
+          "x": 0.5,
+          "hat": "headband",
+          "color": "#e8715a",
+          "speaking": true,
+          "expression": "determined"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "arrowUp",
+          "x": 0.82,
+          "y": 0.55
+        }
+      ],
+      "highlight": [
+        "today"
+      ]
+    }
+  ]
+}
