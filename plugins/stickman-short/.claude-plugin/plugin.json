@@ -1,0 +1,13 @@
+{
+  "name": "stickman-short",
+  "displayName": "Stickman Short",
+  "version": "1.0.0",
+  "description": "Turn an idea, a script or existing audio into a narrated stick-figure Short (9:16 MP4) voiced with TTSForFree and rendered with Remotion.",
+  "author": {
+    "name": "TTSForFree",
+    "url": "https://ttsforfree.com/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp"
+  },
+  "homepage": "https://ttsforfree.com/en/stickman-animation-video/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp",
+  "repository": "https://github.com/CalmNguyen/ttsforfree-mcp",
+  "keywords": ["video", "shorts", "tiktok", "reels", "remotion", "animation", "voiceover"]
+}

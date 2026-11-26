@@ -3,12 +3,14 @@
 Text-to-speech, multi-voice podcasts, subtitle voiceovers, transcription and video dubbing for Claude and any
 other MCP client. Thousands of AI voices in 100+ languages, returned as hosted MP3 URLs.
 
+**[➕ Add to Claude](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=TTSForFree&connectorUrl=https%3A%2F%2Fapi.ttsforfree.com%2Fmcp)** · **[Install in VS Code](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522ttsforfree%2522%252C%2522type%2522%253A%2522http%2522%252C%2522url%2522%253A%2522https%253A%252F%252Fapi.ttsforfree.com%252Fmcp%2522%257D)** · [Claude Code plugin](#claude-code-plugin-mcp--skills)
+
 - **Server URL:** `https://api.ttsforfree.com/mcp` (Streamable HTTP, remote, nothing to install)
 - **Sign-in:** OAuth. Click *Connect* and sign in to TTSForFree. No API key needed. An API key (`X-API-Key` header) also
   works for scripts and agents.
 - **Registry:** [`io.github.CalmNguyen/ttsforfree`](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.CalmNguyen/ttsforfree)
-- **Website:** [ttsforfree.com](https://ttsforfree.com) · setup guide:
-  [ttsforfree.com/en/claude-tts-connector](https://ttsforfree.com/en/claude-tts-connector/)
+- **Website:** [ttsforfree.com](https://ttsforfree.com/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp) · setup guide:
+  [ttsforfree.com/en/claude-tts-connector](https://ttsforfree.com/en/claude-tts-connector/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp)
 
 A free plan is included. Paid generation uses your TTSForFree credits.
 
@@ -16,11 +18,35 @@ A free plan is included. Paid generation uses your TTSForFree credits.
 
 ### Claude (claude.ai, Desktop, mobile)
 
+**One click:** [Add to Claude](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=TTSForFree&connectorUrl=https%3A%2F%2Fapi.ttsforfree.com%2Fmcp) opens Claude's *Add custom connector* dialog with the name and URL filled in.
+Confirm, then click **Connect**, sign in to TTSForFree and allow access.
+
+- Free plan: Claude allows one custom connector.
+- Team / Enterprise: an Owner adds it once for the organization with
+  [this admin link](https://claude.ai/admin-settings/connectors?modal=add-custom-connector&connectorName=TTSForFree&connectorUrl=https%3A%2F%2Fapi.ttsforfree.com%2Fmcp); members then click **Connect**.
+
+Manual setup, if the link does not open:
+
 1. **Settings → Connectors → Add custom connector**
 2. URL: `https://api.ttsforfree.com/mcp`
 3. Click **Connect**, sign in to TTSForFree and allow access.
 
 ### Claude Code
+
+#### Claude Code plugin (MCP + skills)
+
+This repository is also a Claude Code plugin marketplace. The `ttsforfree` plugin adds the MCP connector and the
+`ttsforfree` skill (voice choice, SRT timing and ffmpeg merge rules), so Claude knows how to use the tools well.
+
+```bash
+claude plugin marketplace add CalmNguyen/ttsforfree-mcp
+claude plugin install ttsforfree@ttsforfree
+```
+
+Then run `/mcp` → `plugin:ttsforfree:ttsforfree` → **Authenticate**. Optional: `claude plugin install stickman-short@ttsforfree`
+adds a skill that turns an idea into a narrated stick-figure Short (9:16 MP4) rendered with Remotion.
+
+#### MCP server only
 
 ```bash
 claude mcp add --transport http ttsforfree https://api.ttsforfree.com/mcp
@@ -35,6 +61,14 @@ claude mcp add --transport http ttsforfree https://api.ttsforfree.com/mcp \
 
 ### Cursor, VS Code and other clients
 
+VS Code: [Install in VS Code](https://vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%257B%2522name%2522%253A%2522ttsforfree%2522%252C%2522type%2522%253A%2522http%2522%252C%2522url%2522%253A%2522https%253A%252F%252Fapi.ttsforfree.com%252Fmcp%2522%257D), or run
+
+```bash
+code --add-mcp '{"name":"ttsforfree","type":"http","url":"https://api.ttsforfree.com/mcp"}'
+```
+
+Cursor and other clients: add this to the client's MCP config.
+
 ```json
 {
   "mcpServers": {
@@ -46,7 +80,7 @@ claude mcp add --transport http ttsforfree https://api.ttsforfree.com/mcp \
 ```
 
 Add `"headers": { "X-API-Key": "YOUR_API_KEY" }` if the client does not support OAuth.
-Get an API key at [ttsforfree.com/en/profile](https://ttsforfree.com/en/profile/).
+Get an API key at [ttsforfree.com/en/profile](https://ttsforfree.com/en/profile/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp).
 
 ### Claude API (MCP connector)
 
@@ -81,7 +115,7 @@ curl https://api.anthropic.com/v1/messages \
 | "Dub this video into Vietnamese, Spanish and Japanese for YouTube. Cost first." | `create_upload_url` → `estimate_video_localization` → `localize_video` → `get_localization_status` |
 | "Make me a young male voice that reviews stories, southern Vietnamese accent." | `design_custom_voice` |
 
-Video walkthroughs: [ttsforfree.com/en/claude-tts-connector](https://ttsforfree.com/en/claude-tts-connector/).
+Video walkthroughs: [ttsforfree.com/en/claude-tts-connector](https://ttsforfree.com/en/claude-tts-connector/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp).
 
 ## Tools (21)
 
@@ -118,11 +152,23 @@ Video walkthroughs: [ttsforfree.com/en/claude-tts-connector](https://ttsforfree.
 - OAuth access is scoped to your TTSForFree account and can be revoked any time from your TTSForFree profile
   (Connected apps).
 - Text, subtitles and uploaded media are processed only to produce the audio, subtitles or video you asked for.
-- Privacy policy: [ttsforfree.com/en/privacy-policy](https://ttsforfree.com/en/privacy-policy/)
+- Privacy policy: [ttsforfree.com/en/privacy-policy](https://ttsforfree.com/en/privacy-policy/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp)
 
 ## Support
 
-Open an issue in this repository or contact us via [ttsforfree.com/en/contact](https://ttsforfree.com/en/contact/).
+Open an issue in this repository or contact us via [ttsforfree.com/en/contact](https://ttsforfree.com/en/contact/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp).
+
+## Repository layout
+
+| Path | What it is |
+|---|---|
+| [`server.json`](server.json) | Entry published to the MCP Registry |
+| [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) | Claude Code plugin marketplace (`ttsforfree`) |
+| [`plugins/ttsforfree`](plugins/ttsforfree) | Plugin: MCP connector (`.mcp.json`) + `ttsforfree` skill |
+| [`plugins/stickman-short`](plugins/stickman-short) | Plugin: `stickman-short` skill (Remotion template) |
+
+The skills are copies of the downloads on ttsforfree.com (`/claude/ttsforfree-skill.zip`,
+`/downloads/stickman-short-skill.zip`); update both places together. Check changes with `claude plugin validate .`.
 
 ## Registry metadata
 

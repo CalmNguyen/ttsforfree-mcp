@@ -1,0 +1,13 @@
+{
+  "name": "ttsforfree",
+  "displayName": "TTSForFree",
+  "version": "1.0.0",
+  "description": "Text to speech, multi-voice podcasts, timeline-synced SRT voiceovers, transcription and video dubbing in Claude Code, with thousands of AI voices in 100+ languages.",
+  "author": {
+    "name": "TTSForFree",
+    "url": "https://ttsforfree.com/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp"
+  },
+  "homepage": "https://ttsforfree.com/en/claude-tts-connector/?utm_source=github&utm_medium=readme&utm_campaign=ttsforfree-mcp",
+  "repository": "https://github.com/CalmNguyen/ttsforfree-mcp",
+  "keywords": ["text-to-speech", "tts", "voiceover", "podcast", "srt", "subtitles", "dubbing", "mcp"]
+}
